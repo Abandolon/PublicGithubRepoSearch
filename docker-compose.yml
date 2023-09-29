@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  repo_search:
+    image: repo_search
+    build:
+      context: .
+    ports:
+      - "4567:4567"

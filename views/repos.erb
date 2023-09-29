@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>GitHub Repos</title>
+  </head>
+  <body>
+    <h1>Repositories</h1>
+    <h2>Total Repos found for <%= @params[:keyword] %>: <%= @total_count %></h2>
+
+    <!-- Search Form -->
+    <form action="/repos" method="get">
+      <label for="keyword">Search Another Keyword:</label>
+      <!-- Placeholder value in use since we send `ruby` as default keyword -->
+      <input type="text" id="keyword" name="keyword" placeholder="ruby">
+      <button type="submit">Search Repos</button>
+    </form>
+
+    <!-- Repository Results Links -->
+    <ul>
+      <% @repos.each do |repo| %>
+        <li><a href="<%= repo[:html_url] %>"><%= repo[:name] %></a></li>
+      <% end %>
+    </ul>
+
+    <!-- Pagination Links -->
+    <% if @prev_page %>
+      <a href="/repos?keyword=<%= @params[:keyword] %>&page=<%= @prev_page %>">Previous</a>
+    <% end %>
+    <span>Page <%= @current_page %></span>
+    <a href="/repos?keyword=<%= @params[:keyword] %>&page=<%= @next_page %>">Next</a>
+  </body>
+</html>
