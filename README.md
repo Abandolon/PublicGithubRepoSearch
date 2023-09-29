@@ -72,6 +72,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Possible Enhancements
 
-[] Allow user to chose custom sorting/filtering
-[] Allow skipping to specific pages
-[] Allow user to specify what details of repo they would like displayed
+- [ ] Allow user to chose custom sorting/filtering
+- [ ] Allow skipping to specific pages
+- [ ] Allow user to specify what details of repo they would like displayed
