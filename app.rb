@@ -19,7 +19,8 @@ get '/repos' do
   @next_page = page + 1
   @prev_page = page - 1 if page > 1
 
-  logger.info("Search Repositories Response: #{@repos}")
+  # Uncomment logger if you wish to see raw response from Octokit
+  # logger.info("Search Repositories Response: #{@repos}")
 
   erb :repos
 end
